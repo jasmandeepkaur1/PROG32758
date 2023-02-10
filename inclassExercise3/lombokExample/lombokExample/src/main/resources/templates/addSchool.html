@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>School Management</title>
+</head>
+<body>
+<h1> Use this page to Add a School </h1>
+<form action="#" th:action="@{/add}" method="POST" th:object="${school}">
+  Name: <input type="text" th:field= *{name}> <br>
+    <br>
+   Address: <input type="text" th:field= *{address}> <br>
+    <br>
+  numOfStudents: <input type="number" th:field= *{numStudents}><br>
+  <br>  <input type="submit" value="submit">
+</form>
+</body>
+</html>
