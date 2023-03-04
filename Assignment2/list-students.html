@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list-students</title>
+    <style>
+        h1{
+            font-size: 35px;
+            color: limegreen;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 25px;
+        }
+        th{
+            background-color: lightsalmon;
+        }
+        a{
+            color: limegreen;
+        }
+    </style>
+</head>
+<body>
+<div th:if="${studentList.empty}" >
+</div>
+<div th:unless="${studentList.empty}">
+    <h1 >List All</h1>
+   <table  >
+       <tr>
+          <th>Count</th> <th>First name</th> <th>Last Name</th> <th>Options</th>
+       </tr>
+       <tr th:each=" student :${studentList}">
+           <td th:text="${student.id}">1</td>
+          <td th:text="${student.first_name}"> Bart</td>
+           <td th:text="${student.last_name}"> Simpson</td>
+<!--           <td th:text="${student.Options}"> Details </td>-->
+<!--           <td><a href="@{student/Options/{id}(id=*{id})}">Details</a></td>-->
+           <td ><a href="#" th:href="|/student-details/${student.id}|">Details</a></td>
+       </tr>
+   </table>
+</div>
+<br>
+<br>
+<a href="/" style="font-size: 20px">Index</a>
+</body>
+</html>

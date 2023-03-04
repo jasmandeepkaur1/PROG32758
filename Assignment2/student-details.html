@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>student details</title>
+    <style>
+        th{
+            color:dodgerblue;
+            font-size: 20px;
+        }
+        td{
+            color: mediumpurple;
+            font-size: 20px;
+            font-style: italic;
+        }
+        h1{
+            font-size: 35px;
+            color: limegreen;
+        }
+        a{
+            color: limegreen;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Student Details </h1>
+<table th:each=" student :${studentList}" >
+    <tr>
+        <th>First name :</th>
+        <td th:text="${student.first_name}"></td>
+    </tr>
+
+    <tr>
+        <th> last name :</th>
+        <td th:text="${student.last_name}"></td>
+    </tr>
+    <tr>
+        <th> Program name: </th>
+        <td th:text="${student.program_name}"></td>
+    </tr>
+
+    <tr>
+        <th>program year:</th>
+        <td th:text="${student.program_year}"></td>
+    </tr>
+
+    <tr>
+        <th>program coop:</th>
+        <td th:text="${student.program_coop}"></td>
+    </tr>
+
+    <tr>
+        <th>program internship:</th>
+        <td th:text="${student.program_internship}"></td>
+    </tr>
+</table>
+<a href="/">Index</a>
+<br>
+<br>
+<a href="/listofstudents">List Students</a>
+
+
+</body>
+</html>
