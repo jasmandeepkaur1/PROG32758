@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add an Avenger</title>
+</head>
+<body>
+<h1> Add your hero's info : </h1>
+
+<form action="#" th:action="@{/updateAvenger}" method="post" th:object="${avenger}">
+    <input type ="hidden" th:field=*{id}>
+    <p>Name: <input type="text" th:field=*{name}></p>
+    <p>Age: <input type="number" th:field=*{age}></p>
+    <p> <input type="submit" value="Add!"></p>
+</form>
+
+</body>
+</html>
